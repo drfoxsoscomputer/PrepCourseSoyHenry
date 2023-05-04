@@ -245,11 +245,10 @@ function continueStatement(num) {
   for (let i = 0; i < 10; i++) {
     if (i === 5) {
       continue;
+      suma += 2;
+      newArray.push(suma);
     }
-    suma += 2;
-    newArray.push(suma);
   }
-
   return newArray;
 }
 
