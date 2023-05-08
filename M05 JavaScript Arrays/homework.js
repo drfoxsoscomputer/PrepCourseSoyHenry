@@ -240,16 +240,16 @@ function continueStatement(num) {
   // se continua con la siguiente iteración.
   // [PISTA]: utiliza el statement 'continue'.
   // Tu código:
-  let newArray = [];
+  let arreglo = [];
   let suma = num;
   for (let i = 0; i < 10; i++) {
     if (i === 5) {
       continue;
-      suma += 2;
-      newArray.push(suma);
     }
+    suma += 2;
+    arreglo.push(suma);
   }
-  return newArray;
+  return arreglo;
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
