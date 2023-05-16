@@ -78,17 +78,21 @@ function promedioResultadosTest(resultadosTest) {
   // El parámetro "resultadosTest" es un arreglo de números.
   // Itera (en un bucle) los elementos del arreglo y devuelve el promedio de las notas.
   // Tu código:
+  /* Iterativo
   let promedio = 0;
   for (i = 0; i < resultadosTest.length; i++) {
     promedio += resultadosTest[i];
   }
-  return promedio / resultadosTest.length;
+  return promedio / resultadosTest.length;*/
+  let suma = resultadosTest.reduce((a, b) => a + b);
+  return suma / resultadosTest.length;
 }
 
 function numeroMasGrande(arrayOfNums) {
   // El parámetro "arrayOfNums" es un arreglo de números.
   // Retornar el número más grande.
   // Tu código:
+  /* Iterativa
   let mayor = arrayOfNums[0];
   for (let i = 1; i < arrayOfNums.length; i++) {
     if (arrayOfNums[i] > mayor) {
@@ -96,6 +100,12 @@ function numeroMasGrande(arrayOfNums) {
     }
   }
   return mayor;
+}*/
+  //Metodo
+  return arrayOfNums.reduce(
+    (max, num) => (num > max ? num : max),
+    arrayOfNums[0]
+  );
 }
 
 function multiplicarArgumentos() {
@@ -103,14 +113,16 @@ function multiplicarArgumentos() {
   // Si no se pasan argumentos retorna 0. Si se pasa un argumento, simplemente retórnalo.
   // [PISTA]: "arguments" es un arreglo.
   // Tu código:
-  if (arguments.length === 0) {
-    return 0;
-  }
-  let resultado = arguments[0];
-  for (i = 1; i < arguments.length; i++) {
-    resultado *= arguments[i];
-  }
-  return resultado;
+  // if (arguments.length === 0) return 0;
+  // }
+  // let resultado = arguments[0];
+  // for (i = 1; i < arguments.length; i++) {
+  //   resultado *= arguments[i];
+  // }
+  // return resultado;
+  if (arguments.length === 0) return 0;
+  if (arguments.length === 1) return arguments[0];
+  return [...arguments].reduce((acumulador, valor) => acumulador * valor);
 }
 
 function cuentoElementos(array) {
@@ -142,6 +154,8 @@ function empiezaConNueve(num) {
   // Esta función recibe por parámetro un número.
   // Debe retornar true si el entero inicia con 9 y false en otro caso.
   // Tu código:
+
+  //   return num.toString().startsWith('9');
   if (num.toString()[0] === "9") return true;
   return false;
 }
